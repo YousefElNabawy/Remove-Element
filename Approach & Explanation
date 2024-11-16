@@ -1,0 +1,20 @@
+Approach:
+1.Use a write_index pointer that starts at the beginning of the array. This pointer keeps track of where the next "non-val" element should be placed.
+2.Traverse each element in nums with a separate pointer, i. For each element:
+  If nums[i] is not equal to val, place it at nums[write_index] and increment write_index.
+3.After traversing the array, write_index will point to the new length of nums without any occurrences of val.
+This approach operates in-place and requires 𝑂(𝑛)time, where 𝑛 is the number of elements in nums.
+
+
+
+Explanation of the Code
+int write_index = 0;: This index tells us where to place the next element that isn't equal to val.
+Loop through nums:
+  For each nums[i], if it isn't equal to val, we place it at nums[write_index] and increment write_index.
+  This effectively removes elements equal to val from the array by skipping over them.
+Return write_index: The value of write_index at the end of the loop represents the number of elements in nums that are not equal to val, i.e., k.
+Complexity Analysis
+  Time Complexity: 
+    𝑂(𝑛), where 𝑛 is the length of nums, since we are iterating through the array once.
+  Space Complexity: 
+    𝑂(1), as we are modifying nums in-place.
