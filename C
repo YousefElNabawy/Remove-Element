@@ -1,0 +1,15 @@
+int removeElement(int* nums, int numsSize, int val) {
+    int k = 0;  // This will track the number of elements not equal to val
+    
+    // Iterate over each element in nums
+    for (int i = 0; i < numsSize; i++) {
+        // If the current element is not equal to val, keep it in the array
+        if (nums[i] != val) {
+            nums[k] = nums[i];
+            k++;
+        }
+    }
+    
+    // Return the count of elements not equal to val
+    return k;
+}
