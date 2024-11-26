@@ -1,3 +1,12 @@
+Explanation of the Code
+int write_index = 0;: This index tells us where to place the next element that isn't equal to val.
+Loop through nums:
+  For each nums[i], if it isn't equal to val, we place it at nums[write_index] and increment write_index.
+  This effectively removes elements equal to val from the array by skipping over them.
+Return write_index: The value of write_index at the end of the loop represents the number of elements in nums that are not equal to val
+
+
+
 #include <vector>
 using namespace std;
 
